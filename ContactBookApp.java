@@ -99,10 +99,10 @@ class ContactBook {
             throws ContactNotFoundException {
         Contact c = searchByPhone(phone);
         if (!newName.isEmpty()) {
-            c.setName(newName.trim());
+            c.setName(newName);
         }
         if (!newEmail.isEmpty()) {
-            c.setEmail(newEmail.trim());
+            c.setEmail(newEmail);
         }
     }
 
@@ -138,7 +138,7 @@ public class ContactBookApp {
 
             int choice;
             try {
-                choice = Integer.parseInt(sc.nextLine().trim());
+                choice = Integer.parseInt(sc.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a number from 1 to 7.");
                 continue;
@@ -190,7 +190,7 @@ public class ContactBookApp {
                         
                     case 5:
                         System.out.print("Phone of contact to delete: ");
-                        book.deleteContact(sc.nextLine().trim());
+                        book.deleteContact(sc.nextLine());
                         System.out.println("Contact deleted.");
                         break;
                     case 6:
